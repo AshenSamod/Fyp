@@ -1,0 +1,30 @@
+# Flask Core
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# Database
+Flask-SQLAlchemy==3.0.5
+PyMySQL==1.1.0
+Flask-Migrate==4.0.5
+
+# Authentication & Security
+Flask-JWT-Extended==4.5.2
+Flask-Bcrypt==1.0.1
+
+# CORS
+Flask-Cors==4.0.0
+
+# Machine Learning
+tensorflow==2.20.0
+tensorflow-hub==0.16.1
+numpy==2.3.5
+ml-dtypes==0.5.4
+optree==0.18.0
+keras==3.12.0
+h5py==3.15.1
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Utilities
+sqlalchemy==2.0.36

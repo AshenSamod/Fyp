@@ -1,0 +1,70 @@
+.edit-idea-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-button {
+  color: #6c757d;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.back-button:hover {
+  color: #495057;
+  text-decoration: none;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.idea-form-card {
+  max-width: 900px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.idea-title-input {
+  font-size: 1.1rem;
+  padding: 0.75rem;
+}
+
+.idea-title-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.category-select {
+  padding: 0.75rem;
+}
+
+.category-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .idea-form-card .card-body {
+    padding: 1.5rem !important;
+  }
+}
