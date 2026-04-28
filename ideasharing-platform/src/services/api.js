@@ -2,17 +2,11 @@ import axios from 'axios';
 import tokenManager from '../utils/tokenManager';
 
 
-let apiBase = '';
-if (process.env.NODE_ENV === 'development') {
+const apiBase = (process.env.REACT_APP_API_URL || 'http://localhost:5000/api').trim().replace(/\/+$/, '');
+
+if (!process.env.REACT_APP_API_URL) {
   // eslint-disable-next-line no-console
-  console.log('🔧 Using proxy configuration: /api/* -> http://localhost:5000');
-  apiBase = '/api';
-} else if (process.env.REACT_APP_API_URL) {
-  apiBase = process.env.REACT_APP_API_URL;
-} else {
-  // eslint-disable-next-line no-console
-  console.warn('REACT_APP_API_URL is not set. Defaulting to localhost:5000');
-  apiBase = ' http://localhost:5000/api';
+  console.warn('REACT_APP_API_URL is not set. Using default: http://localhost:5000/api');
 }
 
 const api = axios.create({
@@ -88,7 +82,7 @@ api.interceptors.response.use(
       try {
         // Attempt to refresh the access token
         const response = await axios.post(
-          '/auth/refresh',
+          `${apiBase}/auth/refresh`,
           { refresh_token: refreshToken }
         );
 

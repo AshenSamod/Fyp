@@ -19,7 +19,6 @@ const UsersManagement = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [actionType, setActionType] = useState(''); // 'enable' or 'disable'
   const [actionLoading, setActionLoading] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
   const perPage = 50;
 
   // Check if user is admin

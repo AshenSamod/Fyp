@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Container, Spinner, Alert, Card, Button } from 'react-bootstrap';
+import { Container, Spinner, Alert, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
-import { useAuth } from '../utils/authContext';
 import { ideasAPI } from '../services/api';
 import IdeasList from '../components/dashboard/IdeasList';
 import '../styles/dashboard.css';
 
 const MyIdeas = () => {
-  // const { user } = useAuth(); // Not currently used
   const navigate = useNavigate();
   const [ideas, setIdeas] = useState([]);
   const [loading, setLoading] = useState(true);

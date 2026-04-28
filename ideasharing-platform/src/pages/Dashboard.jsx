@@ -127,7 +127,7 @@ const Dashboard = () => {
       fetchIdeas();
     }
     // include sortBy in deps so changing it refetches
-  }, [activeTab, searchTerm, dateRange, currentPage, categoriesLoading, sortBy]);
+  }, [activeTab, searchTerm, dateRange, currentPage, categoriesLoading, sortBy, categories]);
 
   const handleSearchChange = (term) => {
     setSearchTerm(term);

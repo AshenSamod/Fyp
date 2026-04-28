@@ -11,8 +11,7 @@ const EditIdea = ({ user, onLogout }) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const fetchedRef = useRef(false);
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const sidebarExpanded = true;
 
   const [formData, setFormData] = useState({
     title: '',

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Spinner, Alert, Card, Button } from 'react-bootstrap';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Container, Spinner, Alert, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaPlus, FaComments } from 'react-icons/fa';
 import { useAuth } from '../utils/authContext';
@@ -18,11 +18,7 @@ const MyCommentedIdeas = () => {
   const [totalIdeas, setTotalIdeas] = useState(0);
   const perPage = 20;
 
-  useEffect(() => {
-    fetchMyCommentedIdeas();
-  }, [currentPage]);
-
-  const fetchMyCommentedIdeas = async () => {
+  const fetchMyCommentedIdeas = useCallback(async () => {
     try {
       setLoading(true);
       setError('');
@@ -47,7 +43,11 @@ const MyCommentedIdeas = () => {
       setError(err.response?.data?.error || 'Failed to load ideas. Please try again.');
       setLoading(false);
     }
-  };
+  }, [currentPage, perPage]);
+
+  useEffect(() => {
+    fetchMyCommentedIdeas();
+  }, [fetchMyCommentedIdeas]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

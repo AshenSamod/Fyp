@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { Container, Card, Form, Button, Alert, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FaLightbulb, FaArrowLeft, FaRocket, FaMagic } from 'react-icons/fa';
-import { useAuth } from '../utils/authContext';
 import RichTextEditor from '../components/idea/RichTextEditor';
 import { ideasAPI } from '../services/api';
 import '../styles/AddIdea.css';
 
 const AddIdea = () => {
-  // const { user } = useAuth(); // Not currently used
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
